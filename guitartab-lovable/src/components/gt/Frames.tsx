@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { frameUrl, getFrames, overlayUrl, type FrameInfo } from "@/lib/tab-service";
+import { frameUrl, getFrames, type FrameInfo } from "@/lib/tab-service";
+import { annotatedUrl } from "@/lib/vision-service";
 
 const fmt = (t?: number) => t == null ? "—" : `${Math.floor(t / 60)}:${(t % 60).toFixed(1).padStart(4, "0")}`;
 
@@ -46,7 +47,7 @@ export function Frames({ jobId }: { jobId: string }) {
                 {overlay ? "Analysis view isn't available for this frame." : "This frame couldn't be loaded."}
               </div>
             ) : (
-              <img src={overlay ? overlayUrl(jobId, cur.index) : frameUrl(jobId, cur.index)} alt={`Frame at ${fmt(cur.timestamp)}`}
+              <img src={overlay ? annotatedUrl(jobId, cur.index) : frameUrl(jobId, cur.index)} alt={`Frame at ${fmt(cur.timestamp)}`}
                 onError={() => setImgErr(true)} className="block h-full w-full object-contain" />
             )}
             <figcaption className="absolute bottom-0 left-0 bg-background px-2 py-1 font-mono text-xs">{fmt(cur.timestamp)}</figcaption>
