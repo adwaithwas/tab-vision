@@ -21,6 +21,7 @@ from app.api.routes import (
     frames_router,
     health_router,
     videos_router,
+    vision_router,
 )
 from app.core.config import Settings, get_settings
 from app.core.logging import configure_logging, get_logger
@@ -93,6 +94,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     app.include_router(capabilities_router)
     app.include_router(videos_router)
     app.include_router(frames_router)
+    app.include_router(vision_router)
 
     return app
 
