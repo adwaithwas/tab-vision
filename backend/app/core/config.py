@@ -107,10 +107,16 @@ class Settings(BaseSettings):
     )
 
     # --- CORS ------------------------------------------------------------
-    cors_origins: list[str] = Field(
-        default=["http://localhost:5173", "http://127.0.0.1:5173"],
+    cors_origins: list[str] | str = Field(
+        default=["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:8080", "http://127.0.0.1:8080", "http://localhost:3000"],
         description="Origins allowed to call the API from a browser.",
     )
+
+    @property
+    def cors_origins_list(self) -> list[str]:
+        if isinstance(self.cors_origins, str):
+            return [x.strip() for x in self.cors_origins.split(",") if x.strip()]
+        return self.cors_origins
 
     @property
     def max_upload_size_bytes(self) -> int:
