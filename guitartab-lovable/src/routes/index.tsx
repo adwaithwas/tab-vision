@@ -4,7 +4,6 @@ import { ArrowRight, RotateCcw } from "lucide-react";
 import { UploadZone } from "@/components/gt/Upload";
 import { Processing, Results } from "@/components/gt/Results";
 import { Frames } from "@/components/gt/Frames";
-import { VisionPanel } from "@/components/gt/VisionPanel";
 import { ConnectionStatus } from "@/components/gt/ConnectionStatus";
 import { generateTablature, type Stage, type TabResult } from "@/lib/tab-service";
 import { cn } from "@/lib/utils";
@@ -115,7 +114,6 @@ function Index() {
             <div className="border-t border-rule pt-10 pb-28">
               <Results result={state.result} file={file} />
               <Frames jobId={state.result.jobId} />
-              <VisionPanel jobId={state.result.jobId} />
             </div>
           )}
         </div>
