@@ -1,0 +1,1 @@
+# GuitarTab AI — FastAPI application package.

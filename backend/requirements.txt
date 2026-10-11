@@ -1,0 +1,24 @@
+# FastAPI application framework
+fastapi>=0.115.0,<1.0
+# ASGI server
+uvicorn>=0.34.0,<1.0
+# Multipart form parsing (required for file uploads)
+python-multipart>=0.0.20
+# Typed settings from environment + .env
+pydantic>=2.10.0,<3.0
+pydantic-settings>=2.7.0,<3.0
+
+# Computer-vision / video decoding (headless: no GUI libraries required)
+opencv-python-headless>=4.10,<5.0
+numpy>=2.0,<3.0
+
+# Deep-learning backbone for ML fretboard detector
+# Install the CUDA build first; CPU-only is the fallback:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+torch>=2.0
+torchvision>=0.15
+
+# --- Testing -------------------------------------------------------------
+pytest>=8.3.0,<9.0
+# ASGI test client (TestClient)
+httpx>=0.28.0,<1.0
