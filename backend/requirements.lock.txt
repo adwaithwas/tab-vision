@@ -1,0 +1,42 @@
+# GuitarTab AI - backend runtime dependencies (PINNED / reproducible).
+#
+# Every package below is pinned to the exact version this project was built
+# and tested on, and all of them ship prebuilt wheels for Windows / macOS /
+# Linux, so no C/C++ compiler is required. Install with:
+#
+#     python -m venv backend\.venv
+#     backend\.venv\Scripts\python.exe -m pip install --upgrade pip
+#     backend\.venv\Scripts\python.exe -m pip install -r backend\requirements.lock.txt
+#
+# SUPPORTED PYTHON: 3.11, 3.12 or 3.13 - must be 64-bit.
+# Do NOT use Python 3.14+ here: torch==2.6.0 publishes no wheels for it, so pip
+# falls back to building from source and the install "does not compile".
+# torch has no 32-bit Windows wheels either.
+
+# --- Web framework -------------------------------------------------------
+fastapi==0.143.0
+starlette==1.7.0
+uvicorn==0.54.0
+python-multipart==0.0.32
+
+# --- Settings / validation ----------------------------------------------
+pydantic==2.14.0
+pydantic-core==2.50.0
+pydantic-settings==2.15.0
+
+# --- Computer vision / video decoding (headless: no GUI libraries) -------
+opencv-python-headless==4.14.0.94
+numpy==2.5.3
+
+# --- Deep-learning backbone for the fretboard detector -------------------
+# The default PyPI wheels are CPU-only and run on any machine.
+# torch and torchvision MUST be a matched pair (0.21.x <-> 2.6.x).
+# For an NVIDIA GPU, replace the two lines below with:
+#   pip install torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0
+torchvision==0.21.0
+pillow==12.3.0
+
+# --- Testing -------------------------------------------------------------
+pytest==8.4.2
+httpx==0.28.1
