@@ -122,7 +122,6 @@ function Index() {
       <footer id="about" className="border-t border-rule">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-12 sm:flex-row sm:items-baseline sm:justify-between sm:px-10">
           <Wordmark />
-          <p className="max-w-sm text-sm text-ink-soft">A project exploring computer vision and audio-based guitar transcription.</p>
         </div>
       </footer>
     </div>
