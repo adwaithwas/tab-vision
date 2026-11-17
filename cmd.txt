@@ -1,0 +1,5 @@
+cd "D:\code\PROJECTS\tab creator\backend"
+.\.venv\Scripts\uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+
+cd "D:\code\PROJECTS\tab creator\guitartab-lovable"
+npx vite dev --port 5173

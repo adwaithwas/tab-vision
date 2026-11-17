@@ -62,7 +62,7 @@ STRING_INTERIOR_COL_MARGIN = 0.10  # fraction of width trimmed left/right
 #: aggressive margin would clip them. The binding lines themselves rectify to
 #: rows 0 and h-1, which this margin still excludes.
 STRING_EDGE_MARGIN = 0.05  # fraction of height trimmed top/bottom (bindings)
-STRING_PEAK_THRESHOLD = 0.30  # relative to profile max
+STRING_PEAK_THRESHOLD = 0.25  # relative to profile max
 STRING_MIN_SPACING = 0.035  # fraction of crop height (subset spacing check)
 #: Peaks closer than this are the two Sobel lobes of one physical string line
 #: (true string spacing is ~17% of the crop height, so 8% merges lobes only).
