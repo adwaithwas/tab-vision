@@ -1,4 +1,7 @@
+
+# ==============================
 # Python
+# ==============================
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -11,37 +14,55 @@ env/
 .coverage
 htmlcov/
 
+# ==============================
 # Node
+# ==============================
 node_modules/
 dist/
 coverage/
 *.local
 
-# Environment / secrets
+# ==============================
+# Environment / Secrets
+# ==============================
 .env
-.env.*.local
+.env.*
+!.env.example
 
-# Data & generated artifacts
+# ==============================
+# Data & Generated Artifacts
+# ==============================
 data/uploads/*
 !data/uploads/.gitkeep
+
 data/raw/*
 !data/raw/.gitkeep
+
 data/processed/*
 !data/processed/.gitkeep
+
 data/annotations/*
 !data/annotations/.gitkeep
+
 data/extracted_fretboard/
 runs/
-*.pt
-backend/models/*.pt
 
-# Temporary & local scratch environments
+# Model weights (distribute separately)
+*.pt
+*.pth
+*.onnx
+
+# ==============================
+# Temporary / Scratch
+# ==============================
 scratch/
 *.mp4
 *.wav
 *.mp3
 
-# OS / editor
+# ==============================
+# OS / Editors
+# ==============================
 .DS_Store
 Thumbs.db
 .idea/
