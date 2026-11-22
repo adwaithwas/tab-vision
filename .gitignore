@@ -47,15 +47,16 @@ data/annotations/*
 data/extracted_fretboard/
 runs/
 
-# Model weights (distribute separately)
+# ==============================
+# Model Weights
+# ==============================
 *.pt
 *.pth
 *.onnx
 
 # ==============================
-# Temporary / Scratch
+# Media Files
 # ==============================
-scratch/
 *.mp4
 *.wav
 *.mp3
